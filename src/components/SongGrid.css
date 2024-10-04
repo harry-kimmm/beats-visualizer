@@ -1,0 +1,19 @@
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.song-card {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.song-card:hover {
+    background-color: #e0e0e0;
+}
