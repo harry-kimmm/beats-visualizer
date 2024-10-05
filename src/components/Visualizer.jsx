@@ -23,7 +23,14 @@ const Visualizer = ({ song }) => {
         renderer.outputColorSpace = THREE.SRGBColorSpace;
 
         const renderScene = new RenderPass(scene, camera);
-        const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1, 0.8, 0.5);
+
+        // Generate random bloom settings
+        const bloomThreshold = Math.random() * 0.5;
+        const bloomStrength = Math.random() * 0.5;
+        const bloomRadius = Math.random() * 0.5;
+
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), bloomStrength, bloomRadius, bloomThreshold);
+
         const bloomComposer = new EffectComposer(renderer);
         bloomComposer.addPass(renderScene);
         bloomComposer.addPass(bloomPass);
@@ -32,12 +39,17 @@ const Visualizer = ({ song }) => {
         camera.position.set(0, -2, 14);
         camera.lookAt(0, 0, 0);
 
+        // Generate random color values
+        const randomRed = Math.random();
+        const randomGreen = Math.random();
+        const randomBlue = Math.random();
+
         const uniforms = {
             u_time: { type: 'f', value: 0.0 },
             u_frequency: { type: 'f', value: 0.0 },
-            u_red: { type: 'f', value: 1.0 },
-            u_green: { type: 'f', value: 0.5 },
-            u_blue: { type: 'f', value: 0.2 }
+            u_red: { type: 'f', value: randomRed },
+            u_green: { type: 'f', value: randomGreen },
+            u_blue: { type: 'f', value: randomBlue }
         };
 
         const mat = new THREE.ShaderMaterial({
@@ -51,6 +63,7 @@ const Visualizer = ({ song }) => {
         scene.add(mesh);
         mesh.material.wireframe = true;
 
+        // Audio setup
         const listener = new THREE.AudioListener();
         camera.add(listener);
 
@@ -86,8 +99,10 @@ const Visualizer = ({ song }) => {
             uniforms.u_frequency.value = analyser.getAverageFrequency();
 
             const frequency = analyser.getAverageFrequency();
-            mesh.scale.set(1 + frequency / 256, 1 + frequency / 256, 1 + frequency / 256);
-            uniforms.u_red.value = frequency / 512;
+            mesh.scale.set(0.8 + frequency / 256, 0.8 + frequency / 256, 0.8 + frequency / 256);
+            uniforms.u_red.value = randomRed;
+            uniforms.u_green.value = randomGreen;
+            uniforms.u_blue.value = randomBlue;
 
             bloomComposer.render();
             requestAnimationFrame(animate);
@@ -100,7 +115,6 @@ const Visualizer = ({ song }) => {
         };
     }, [song]);
 
-    // Go back a page and reload
     const handleBack = () => {
         if (soundRef.current) {
             soundRef.current.stop();
