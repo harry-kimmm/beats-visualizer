@@ -1,19 +1,20 @@
+div {
+    text-align: center;
+}
+
 .song-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
 }
 
 .song-card {
-    padding: 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.song-card:hover {
-    background-color: #e0e0e0;
 }

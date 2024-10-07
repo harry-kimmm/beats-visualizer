@@ -7,6 +7,16 @@ import './App.css';
 const songs = [
   { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
   { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
+  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
+  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
+  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
+  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
+  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
 ];
 
 function App() {
