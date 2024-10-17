@@ -5,18 +5,15 @@ import Visualizer from './components/Visualizer';
 import './App.css';
 
 const songs = [
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
-  { title: 'Song 1', artist: 'Artist 1', file: '/chillhappybeat.mp3' },
-  { title: 'Song 2', artist: 'Artist 2', file: '/rnbsample.mp3' },
+  { title: 'Beat 1', artist: 'Harry Kim', file: '/chillhappybeat.wav' },
+  { title: 'Beat 2', artist: 'Harry Kim', file: '/rnbsample.mp3' },
+  { title: 'Beat 3', artist: 'Harry Kim', file: '/wavy.wav' },
+  { title: 'Beat 4', artist: 'Harry Kim', file: '/<()>.wav' },
+  { title: 'Beat 5', artist: 'Harry Kim', file: '/coolscalerstuff.wav' },
+  { title: 'Beat 6', artist: 'Harry Kim', file: '/soundscowboy.wav' },
+  { title: 'Beat 7', artist: 'Harry Kim', file: '/sad.wav' },
+  { title: 'Beat 8', artist: 'Harry Kim', file: '/guitars.wav' },
+
 ];
 
 function App() {
